@@ -1,0 +1,24 @@
+<!-- Carousel Wrapper -->
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+  <div class="carousel-inner">
+    <div class="carousel-item" *ngFor="let img of images; let i = index" [class.active]="i === 0">
+      <div class="overlay"></div>
+      <!-- Background Blurred Image (Fills Screen) -->
+      <img [src]="img" class="blur-bg" alt="">
+      <!-- Main Content Image (Centered & Contained) -->
+      <img [src]="img" class="d-block w-100 vh-100 object-fit-contain main-img" [alt]="'Ciudad de Oro ' + (i + 1)">
+    </div>
+  </div>
+</div>
+<!-- Text Content Overlay -->
+<div class="hero-content text-center text-white">
+  
+  
+  <a routerLink="/registro" class="btn btn-gold btn-lg px-5 py-3 rounded-pill fw-bold animate-btn pulsate-center" title="Registrarme Ahora">
+    <i class="fas fa-user-plus me-2"></i> Registrarme Ahora
+  </a>
+</div>
+
+
+
+

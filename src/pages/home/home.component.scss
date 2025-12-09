@@ -1,0 +1,142 @@
+/* Google Fonts should be loaded in index.html */
+
+:host {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+.carousel-item {
+  position: relative;
+  transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out !important; /* Force smoother/slower transition */
+}
+
+
+.object-fit-contain {
+  object-fit: contain;
+  /* animation: zoomEffect 20s infinite alternate;  <-- Removed to prevent cropping */
+}
+
+/* Blurred Background */
+.blur-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(20px);
+  transform: scale(1.1); /* Hide white edges from blur */
+  z-index: 0;
+}
+
+/* Main Image */
+.main-img {
+  position: relative;
+  z-index: 2; /* Sit above blur */
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+@keyframes zoomEffect {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1); /* Gentle zoom */
+  }
+}
+
+.d-block.w-100.vh-100 {
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+}
+
+/* Centered Hero Content */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 800px;
+  pointer-events: none; /* Allow clicks to pass through empty areas if needed, but button needs events */
+}
+
+/* Re-enable pointer events for inner elements */
+.hero-content > * {
+  pointer-events: auto;
+}
+
+/* Lighter Overlay to let images shine through */
+.pulsate-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Gold Premium Gradient */
+  background: linear-gradient(135deg, #FFD700 0%, #FDB931 100%);
+  color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+  
+  /* Animation */
+  animation: pulse-gold 2s infinite;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .pulsate-center {
+    font-size: 1rem;       /* Smaller text */
+    padding: 0.75rem 2rem; /* Smaller padding */
+    width: auto;           /* Allow natural width */
+  }
+}
+
+.pulsate-center:hover {
+  animation: none;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.7);
+  color: #000;
+}
+
+@keyframes pulse-gold {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 20px rgba(255, 215, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+  }
+}
+/* Lighter Overlay to let images shine through */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.4)
+  );
+  z-index: 1;
+}
+
+
+
+
+
+

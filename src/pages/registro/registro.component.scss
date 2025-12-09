@@ -1,0 +1,98 @@
+:host {
+  display: block;
+  /* Use a background image that complements the glassmorphism.
+     You can reuse one of the home images or a specific gradient. */
+  background: url('/assets/images/img1.jpeg') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Fallback background if image fails or while loading */
+.registro-container {
+  background: rgba(0,0,0,0.4); 
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  width: 100%;
+  max-width: 500px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Custom Input Styles to match glass theme */
+.form-control, .form-select, .input-group-text {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: none;
+  border-color: #FFD700;
+  color: #fff;
+}
+
+.hover-white:hover {
+  color: #fff !important;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Gold Button premium style (reused) */
+.btn-gold {
+  background: linear-gradient(45deg, #FFD700, #FDB931);
+  color: #000;
+  border: none;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+  background: linear-gradient(45deg, #FDB931, #FFD700);
+}
+
+.btn-gold:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* WhatsApp Button */
+.btn-whatsapp {
+  background: linear-gradient(45deg, #25D366, #128C7E);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+  background: linear-gradient(45deg, #128C7E, #25D366);
+  color: #fff;
+}
+
+/* Custom Modal Backdrop Fix */
+.modal {
+  background-color: rgba(0, 0, 0, 0.85); /* Dark premium backdrop */
+}
