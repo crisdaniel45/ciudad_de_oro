@@ -2,7 +2,10 @@
   display: block;
   /* Use a background image that complements the glassmorphism.
      You can reuse one of the home images or a specific gradient. */
-  background: url('../../../assets/images/img1.jpeg') no-repeat center center;
+.registro-container {
+    /* background: url(...) <- BORRA ESTA LÍNEA */
+    /* El resto de estilos (min-vh-100, flex, etc.) ya están en las clases de Bootstrap en el HTML */
+}
   background-size: cover;
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
